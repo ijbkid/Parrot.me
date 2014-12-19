@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard | Parrot | Publisher</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="shortcut icon" href="../favicon.ico"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 10]>
+        <script src="assets/js/media.match.min.js"></script>
+        <script src="assets/js/placeholder.min.js"></script>
+    <![endif]-->
+
+    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">        <!-- Font Awesome -->
+    <link href="assets/css/styles.css" type="text/css" rel="stylesheet">                                     <!-- Core CSS with all styles -->
+
+    <link href="assets/plugins/jstree/dist/themes/avalon/style.min.css" type="text/css" rel="stylesheet">    <!-- jsTree -->
+    <link href="assets/plugins/codeprettifier/prettify.css" type="text/css" rel="stylesheet">                <!-- Code Prettifier -->
+    <link href="assets/plugins/iCheck/skins/minimal/blue.css" type="text/css" rel="stylesheet">              <!-- iCheck -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->
+    <!--[if lt IE 9]>
+        <link href="assets/css/ie8.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+        <script type="text/javascript" src="assets/plugins/charts-flot/excanvas.min.js"></script>
+        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- The following CSS are included as plugins and can be removed if unused-->
+    
+
+    </head>
+
+    <body class="infobar-offcanvas">
+       
+        <div id="headerbar">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-brown">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-pencil"></i></div>
+					</div>
+					<div class="tiles-footer">
+						Create Post
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-grape">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-group"></i></div>
+						<div class="pull-right"><span class="badge">2</span></div>
+					</div>
+					<div class="tiles-footer">
+						Contacts
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-primary">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-envelope-o"></i></div>
+						<div class="pull-right"><span class="badge">10</span></div>
+					</div>
+					<div class="tiles-footer">
+						Messages
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-inverse">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-camera"></i></div>
+						<div class="pull-right"><span class="badge">3</span></div>
+					</div>
+					<div class="tiles-footer">
+						Gallery
+					</div>
+				</a>
+			</div>
+
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-midnightblue">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-cog"></i></div>
+					</div>
+					<div class="tiles-footer">
+						Settings
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<a href="#" class="shortcut-tiles tiles-orange">
+					<div class="tiles-body">
+						<div class="pull-left"><i class="fa fa-wrench"></i></div>
+					</div>
+					<div class="tiles-footer">
+						Plugins
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+        <header id="topnav" class="navbar navbar-inverse navbar-fixed-top clearfix" role="banner">
+
+	
+	
+	<a class="navbar-brand" href="index.html">Parrot</a>
+	<a id="rightmenu-trigger" class="" data-toggle="tooltip"  title="Toggle Infobar"></a>
+	
+
+	<ul class="nav navbar-nav toolbar pull-right">
+		<li class="dropdown">
+			<a href="#" id="navbar-links-toggle" data-toggle="collapse" data-target="header>.navbar-collapse">&nbsp;</a>
+		</li>
+
+		<li class="toolbar-icon-bg demo-headerdrop-hidden">
+            <a href="#" id="headerbardropdown"><span class="icon-bg"><i class="fa fa-fw fa-level-down"></i></span></i></a>
+        </li>
+
+
+	
+
+		
+		<li  class="toolbar-icon-bg">
+			<a  href="#" class="hasnotifications" ><span class="icon-bg"><i class="fa fa-fw fa-bell"></i></span><span class="badge badge-alizarin">5</span></a>
+			
+		</li>
+
+		
+
+		<li class="dropdown toolbar-icon-bg demo-search-hidden mr5">
+			<a href="#" class="dropdown-toggle tooltips" data-toggle="dropdown"><span class="icon-bg"><i class="fa fa-fw fa-search"></i></span></a>
+			
+			<div class="dropdown-menu arrow search dropdown-menu-form">
+				<div class="dd-header">
+					<span>Search</span>
+					<span><a href="#">Advanced search</a></span>
+				</div>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="">
+					
+					<span class="input-group-btn">
+						
+						<a class="btn btn-primary" href="#">Search</a>
+					</span>
+				</div>
+			</div>
+		</li>
+
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
+				<span class="hidden-xs">Hassan Abdulhamid</span>
+				<img class="img-circle" src="assets/demo/avatar/avatar_06.png" alt="Dangerfield" />
+
+			</a>
+			<ul class="dropdown-menu userinfo">
+				<li><a href="#"><span class="pull-left">Edit Profile</span> <i class="pull-right fa fa-pencil"></i></a></li>
+				<li><a href="#"><span class="pull-left">Gangfly Settings</span> <i class="pull-right fa fa-cogs"></i></a></li>
+				<li><a href="#"><span class="pull-left">Help</span> <i class="pull-right fa fa-question-circle"></i></a></li>
+				<li class="divider"></li>
+				<li><a href="#"><span class="pull-left">Sign Out</span> <i class="pull-right fa fa-sign-out"></i></a></li>
+			</ul>
+		</li>
+
+	</ul>
+
+</header>
+
+        <div id="wrapper">
+            <div id="layout-static">
+                <div class="static-sidebar-wrapper sidebar-default">
+                    <div class="static-sidebar">
+                        <div class="sidebar">
+
+
+
+			<div class="widget stay-on-collapse" id="widget-sidebar">
+			
+			<nav role="navigation" class="widget-body">
+				<ul class="acc-menu">
+			<li style="border-left: 5px solid #48b4ce;"><a href="index.html"><i class="fa fa-home fa-2x"></i><span>Dashboard</span></a></li>
+			<li style="border-left: 5px solid #e77161;"><a href="javascript:;"><i class="fa fa-pencil fa-2x"></i><span>Publish</span></a>
+			<ul class="acc-menu">
+				<li><a href="edit.html">Edit a Story</a></li>
+				<li><a href="del.html#">Delete Story</a></li>
+				<li><a href="imp.html">Saved story</a></li>
+			</ul>
+		</li>
+		<li style="border-left: 5px solid #b7b7b7;"><a href="javascript:;"><i class="fa fa-briefcase fa-2x"></i><span>Post Job</span></a>
+			<ul class="acc-menu">
+				<li><a href="pst.php">Post a job</a></li>
+				<li><a href="del.php">Delete job</a></li>
+				<li><a href="edit.php">Edit a Job</a></li>
+			</ul>
+		</li>
+		
+		<li style="border-left: 5px solid #758e92;"><a href="javascript:;"><i class="fa fa-bar-chart-o fa-2x"></i><span>Analytics</span></a>
+		</li>
+		
+	</ul>
+</nav>
+    </div>
+
+
+	<div class="widget stay-on-collapse">
+		<div class="widget-heading">Functional Apps</div>
+		<nav class="widget-body">
+			<ul class="acc-menu">
+				<li style="border-left: 5px solid #f89846;"><a href="app-inbox.html"><i class="fa fa-inbox fa-2x"></i><span>Collections</span><span class="badge badge-info">34+</span></a></li>
+				<li style="border-left: 5px solid #48b4ce;"><a href="app-tasks.html"><i class="fa fa-tasks fa-2x"></i><span>Invite team</span></a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	
+	
+	
+
+
+	
+</div>
+                    </div>
+                </div>
+                <div class="static-content-wrapper">
+                    <div class="static-content">
+                        <div class="page-content">
+                            <div class="page-heading">            
+                                
+                                <div class="options">
+								<div class="btn-toolbar">
+								<a href="#" class="btn btn-success">Visit page</a>
+									<a style="margin-left: 5px;" href="#" class="btn btn-default"><i class="fa fa-fw fa-cog"></i></a>
+								</div>
+							</div>
+                            </div>
+                           
+                            <div class="container-fluid">
+                               <div class="row">
+		<div class="col-md-12">
+			<form action="#" class="form-inline mb10">
+				<div class="form-group">
+					<select name="" id="" class="form-control">
+						<option value="">Bulk Actions</option>
+						<option value="">Edit</option>
+						<option value="">Move to Trash</option>
+					</select>
+
+					<div class="btn btn-default">Apply</div>
+				</div>
+
+				<div class="form-group pull-right">
+					<select name="" id="" class="form-control">
+						<option value="">View all categories</option>
+						<option value="">Random</option>
+						<option value="">Gadgets</option>
+						<option value="">Car</option>
+						<option value="">Corporate</option>
+					</select>
+					
+					<div class="btn btn-default">Filter</div>
+				</div>
+			</form>
+
+			<div class="panel">
+				<div class="panel-body panel-no-padding">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th width="40">
+									<div class="icheck checkbox-inline"><input type="checkbox"></div>
+								</th>
+								<th>Title</th>
+								<th>Author</th>
+								<th>Categories</th>
+								<th>Tags</th>
+								<th><i class="fa fa-comment"></i></th>
+								<th>Date</th>
+								<th width="240">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><div class="icheck checkbox-inline"><input type="checkbox"></div></td>
+								<td><a href="#">WhatsApp for Android Wear will have you talking to your wrist</a></td>
+								<td><a href="#">Tomi Hassan</a></td>
+								<td><a href="#">News</a></td>
+								<td><a href="#"><span class="label label-inverse">Null</span></a> <a href="#"><span class="label label-inverse">Null</span></a></td>
+								<td>634</td>
+								<td>2014/21/12</td>
+								<td>
+									<a href="#" class="btn btn-success btn-xs btn-label"><i class="fa fa-search"></i>View</a>
+									<a href="write.html" class="btn btn-default btn-xs btn-label"><i class="fa fa-pencil"></i>Edit</a>
+									<a href="#" class="btn btn-danger btn-xs btn-label"><i class="fa fa-trash-o"></i>Trash</a>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="icheck checkbox-inline"><input type="checkbox"></div></td>
+								<td><a href="#">The Barisieur alarm clock automatically brews coffee while you wake</a></td>
+								<td><a href="#">Jide Balogun</a></td>
+								<td><a href="#">News</a></td>
+								<td><a href="#"><span class="label label-inverse">Null</span></a> <a href="#"><span class="label label-inverse">Null</span> <a href="#"></a></td>
+								<td>393</td>
+								<td>2014/21/12</td>
+								<td>
+									<a href="#" class="btn btn-success btn-xs btn-label"><i class="fa fa-search"></i>View</a>
+									<a href="write.html" class="btn btn-default btn-xs btn-label"><i class="fa fa-pencil"></i>Edit</a>
+									<a href="#" class="btn btn-danger btn-xs btn-label"><i class="fa fa-trash-o"></i>Trash</a>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="icheck checkbox-inline"><input type="checkbox"></div></td>
+								<td><a href="#">Tesla seals landmark deal to mass-produce EV batteries in the US</a></td>
+								<td><a href="#">Kate Wrong</a></td>
+								<td><a href="#">News</a></td>
+								<td><a href="#"><span class="label label-inverse">Null</span></a> <a href="#"><span class="label label-inverse">Null</span></a></td>
+								<td>238</td>
+								<td>2014/21/12</td>
+								<td>
+									<a href="#" class="btn btn-success btn-xs btn-label"><i class="fa fa-search"></i>View</a>
+									<a href="write.html" class="btn btn-default btn-xs btn-label"><i class="fa fa-pencil"></i>Edit</a>
+									<a href="#" class="btn btn-danger btn-xs btn-label"><i class="fa fa-trash-o"></i>Trash</a>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="icheck checkbox-inline"><input type="checkbox"></div></td>
+								<td><a href="#">Comcast tries to clinch TWC merger by sweetening its low-income internet plan</a></td>
+								<td><a href="#">Mary B. Hurley</a></td>
+								<td><a href="#">News</a></td>
+								<td><a href="#"><span class="label label-inverse">Null</span></a> <a href="#"><span class="label label-inverse">Null</span></a></td>
+								<td>234</td>
+								<td>2014/21/12</td>
+								<td>
+									<a href="#" class="btn btn-success btn-xs btn-label"><i class="fa fa-search"></i>View</a>
+									<a href="write.html" class="btn btn-default btn-xs btn-label"><i class="fa fa-pencil"></i>Edit</a>
+									<a href="#" class="btn btn-danger btn-xs btn-label"><i class="fa fa-trash-o"></i>Trash</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+                            </div> <!-- .container-fluid -->
+                        </div> <!-- #page-content -->
+                    </div>
+                    <footer role="contentinfo">
+    <div class="clearfix">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><h6 style="margin: 0;"> &copy; 2014 Parrot</h6></li>
+        </ul>
+    </div>
+</footer>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="infobar-wrapper">
+            <div class="infobar">
+
+
+
+				<div id="widgetarea">
+
+
+
+
+
+					<div class="widget">
+            <div class="widget-heading">
+                <a href="javascript:;" data-toggle="collapse" data-target="#recentactivity"><h4>Recent Activity</h4></a>
+            </div>
+            <div class="widget-body collapse in" id="recentactivity">
+                <ul class="recent-activities">
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_11.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Jean Alanis</a> invited 3 unconfirmed members to <a href="#">Sed ut perspiciatis unde</a></span>
+                            <span class="time">Sep 16, 2014 at 10:06 AM</span>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="activityicon activity-success">
+                            <i class="fa fa-cloud"></i>
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Stacy Villani</a> and <a href="#" class="person">Leroy Greenlee</a> added new files to <a href="#">Dicta sunt explicabo</a></span>
+                            <span class="time">Sep 12, 2014 at 11:06 PM</span>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_07.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Shannon Schmucker</a> is now following <a href="#" class="person">Anthony Ware</a></span>
+                            <span class="time">Sep 06, 2014 at 1:46 AM</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_01.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Roxann Hollingworth</a> commented on <a href="#">Natus error sit voluptatem</a></span>
+                            <span class="time">Sep 02, 2014 at 7:50 PM</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_04.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Mitchell Kosak</a> added <a href="#" class="person">Bruce Ory</a> to <a href="#">Accusantium doloremque laudantium</a></span>
+                            <span class="time">Sep 02, 2014 at 8:35 AM</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="activityicon activity-inverse">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#">4 new users</a> requested to join group</span>
+                            <span class="time">Aug 29, 2014 at 05:34 PM</span>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_09.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Rodney Moody</a> created new thread <a href="#">Vero eos et accusamus</a></span>
+                            <span class="time">Aug 13, 2014 at 1:23 PM</span>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="activityicon activity-info">
+                            <i class="fa fa-comment-o"></i>
+                        </div>
+                        <div class="content">
+                            <span class="msg">Anonymous user commented on <a href="#">Totam rem aperiam</a></span>
+                            <span class="time">Aug 11, 2014 at 12:01 PM</span>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="assets/demo/avatar/avatar_05.png" class="img-responsive img-circle">
+                        </div>
+                        <div class="content">
+                            <span class="msg"><a href="#" class="person">Pricilla Panella</a> is now following <a href="#" class="person">Ricky Marengo</a></span>
+                            <span class="time">Jul 25, 2014 at 3:11 PM</span>
+                        </div>
+                    </li>
+                    <li class="seeall">
+                        <a href="#" class="pull-right">See all activities</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+
+        
+        
+
+
+    </div>
+</div>
+        </div>
+
+
+    
+   
+    <!-- Load site level scripts -->
+
+<script src="assets/js/jquery/1.10.2/jquery.min.js"></script>
+<script src="assets/js/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+<!-- <script src="assets/js/jquery-1.10.2.min.js"></script> --> 							<!-- Load jQuery -->
+<!-- <script src="assets/js/jqueryui-1.9.2.min.js"></script> --> 							<!-- Load jQueryUI -->
+<script src="assets/js/bootstrap.min.js"></script> 								<!-- Load Bootstrap -->
+
+<script src="assets/plugins/sparklines/jquery.sparklines.min.js"></script>  		<!-- Sparkline -->
+<script src="assets/plugins/jstree/dist/jstree.min.js"></script>  				<!-- jsTree -->
+
+<script src="assets/plugins/codeprettifier/prettify.js"></script> 				<!-- Code Prettifier  -->
+<script src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script> 		<!-- Swith/Toggle Button -->
+
+<script src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>  <!-- Bootstrap Tabdrop -->
+
+<script src="assets/plugins/iCheck/icheck.min.js"></script>     					<!-- iCheck -->
+
+<script src="assets/js/enquire.min.js"></script> 									<!-- Enquire for Responsiveness -->
+
+<script src="assets/plugins/bootbox/bootbox.js"></script>							<!-- Bootbox -->
+
+<script src="assets/plugins/simpleWeather/jquery.simpleWeather.min.js"></script> <!-- Weather plugin-->
+
+<script src="assets/js/application.js"></script>
+<script src="assets/demo/demo.js"></script>
+<script src="assets/demo/demo-switcher.js"></script>
+
+
+<!-- End loading site level scripts -->
+    
+    <!-- Load page level scripts-->
+	<script src="assets/plugins/pulsate/jQuery.pulsate.min.js"></script> 		<!-- Pulsate -->
+
+<script>
+$(function () {
+	$("#pulsate1").pulsate({glow:false});
+	$("#pulsate2").pulsate({color:"#09f"});
+	$("#pulsate3").pulsate({reach:100});
+	$("#pulsate4").pulsate({speed:2500});
+	$("#pulsate5").pulsate({pause:1000});
+	$("#pulsate6").pulsate({onHover:true});
+});
+</script>
+    
+<script src="assets/demo/demo-ui-tiles.js"></script>
+
+    <!-- End loading page level scripts-->
+
+    </body>
+
+</html>
